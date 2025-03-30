@@ -1,0 +1,17 @@
+import React, { useState } from 'react'
+
+const CategoryDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const Categories = [
+    "smartP"
+  ]
+}
+
+const AllProducts = () => {
+  return (
+    <div>AllProducts</div>
+  )
+}
+
+export default AllProducts
