@@ -6,7 +6,7 @@ import vision from "../assets/vision.png";
 import lap from "../assets/lap.png";
 import CreditCard from "../assets/CreditCard.png";
 import { FaTruck, FaHeadphones, FaShieldAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import {link}
 const Hero = () => {
   return (
     <div>

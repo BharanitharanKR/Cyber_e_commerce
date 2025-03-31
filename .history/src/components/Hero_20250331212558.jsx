@@ -6,7 +6,7 @@ import vision from "../assets/vision.png";
 import lap from "../assets/lap.png";
 import CreditCard from "../assets/CreditCard.png";
 import { FaTruck, FaHeadphones, FaShieldAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <div>
@@ -22,7 +22,7 @@ const Hero = () => {
             <p className="text-xl md:text-3xl font-semibold text-yellow-400">
               Discounts up to -50%
             </p>
-            <Link to="/deals">
+            <Link to="">
               {" "}
               <button className="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-700 transition-all text-white rounded-lg text-lg font-semibold shadow-lg">
                 Shop Now

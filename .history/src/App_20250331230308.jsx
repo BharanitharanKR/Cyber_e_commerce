@@ -2,10 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./Pages/Home";
-import Tracker from "./components/Tracker";
-import Deals from "./Pages/Deals"
-import ProductName from "./Pages/ProductName"; // ✅ Ensure correct file path & casing
-import Billing from "./Pages/Billing";
+import Tracker from "./components/Tracker";Deals// ✅ Import Deals (which contains AllProducts)
+import ProductName from "./pages/ProductName"; // ✅ Ensure correct file path & casing
+import Billing from "./pages/Billing";
 import Chase from "./Pages/Chase";
 import Compared from "./Pages/Compared";
 import Confirm from "./Pages/Confirm";
