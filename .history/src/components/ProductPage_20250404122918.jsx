@@ -10,10 +10,9 @@ const ProductPage = ({
   image,
   discount,
 }) => {
-  // Use image from props or fallback to default images
-  const images = [
-    image ||
-      "https://www.apple.com/newsroom/images/product/mac/standard/Apple_16-inch-MacBook-Pro_111319_big.jpg.large.jpg",
+  // Use the product's images from props or fallback to default images if not provided
+  const images = product?.images || [
+    image, // Use main image as first image
     "https://www.manlylaptops.com.au/assets/full/MLLAP99221-G.png?20241001135556",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNiechGPRA-hrxspNfWeZikkoEivcPo8OQJX0dF8njnQkcUtgqNB1sb1N5dOrbPVtuAxc&usqp=CAU",
     "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111902_mbp14-silver2.png",
@@ -22,10 +21,7 @@ const ProductPage = ({
   const [currentImage, setCurrentImage] = useState(images[0]);
 
   // Calculate original price based on discount percentage
-  const originalPrice = discount
-    ? (price / (1 - discount / 100)).toFixed(0)
-    : 1999;
-  const discountPercentage = discount || 21;
+  const originalPrice = discount ? price / (1 - discount / 100) : price;
 
   // Function to handle previous image
   const handlePrev = () => {
@@ -42,12 +38,12 @@ const ProductPage = ({
   };
 
   return (
-    <div className="w-screen mx-auto my-5  flex  justify-between">
+    <div className="container mx-auto pl-16 pr-16 flex gap-16">
       {/* Left Side: Image Section */}
-      <div className="w-1/2  flex flex-col items-center">
+      <div className="w-1/2 flex flex-col items-center">
         <img
           src={currentImage}
-          alt="Product"
+          alt={name}
           className="w-[500px] h-[300px] object-contain"
         />
 
@@ -60,17 +56,15 @@ const ProductPage = ({
             ←
           </button>
           <div className="flex gap-2">
-            {images.map((image, index) => (
+            {images.map((img, index) => (
               <img
                 key={index}
-                src={image}
-                alt={`Thumbnail ${index + 1}`}
+                src={img}
+                alt={`${name} Thumbnail ${index + 1}`}
                 className={`w-16 h-16 border-2 rounded-md cursor-pointer ${
-                  currentImage === image
-                    ? "border-red-500"
-                    : "border-transparent"
+                  currentImage === img ? "border-red-500" : "border-transparent"
                 }`}
-                onClick={() => setCurrentImage(image)}
+                onClick={() => setCurrentImage(img)}
               />
             ))}
           </div>
@@ -84,8 +78,8 @@ const ProductPage = ({
       </div>
 
       {/* Right Side: Product Details */}
-      <div className="w-1/2 flex flex-col gap-6 py-10">
-        <h1 className="text-[28px] font-medium">
+      <div className="w-2/3 flex flex-col gap-6">
+        <h1 className="text-xl font-medium">
           {name ||
             "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray"}
         </h1>
@@ -108,13 +102,38 @@ const ProductPage = ({
         {/* Price Section */}
         <div className="flex items-center gap-2">
           <span className="text-2xl font-bold text-red-600">
-            ${price || 1699}
+            ${price?.toFixed(2) || "1699.00"}
           </span>
-          <span className="text-gray-500 line-through">${originalPrice}</span>
-          <span className="bg-yellow-500 text-white px-2 py-1 rounded">
-            {discountPercentage}% OFF
-          </span>
+          {discount > 0 && (
+            <>
+              <span className="text-gray-500 line-through">
+                ${originalPrice.toFixed(2)}
+              </span>
+              <span className="bg-yellow-500 text-white px-2 py-1 rounded">
+                {discount}% OFF
+              </span>
+            </>
+          )}
         </div>
+
+        {/* Rating display */}
+        {rating && (
+          <div className="flex items-center gap-2">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <span
+                  key={i}
+                  className={
+                    i < Math.floor(rating) ? "text-yellow-500" : "text-gray-300"
+                  }
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+            <span>({totalReviews} reviews)</span>
+          </div>
+        )}
 
         {/* Quantity & Buttons */}
         <div className="flex items-center gap-4">
@@ -124,7 +143,6 @@ const ProductPage = ({
             <button className="px-3">+</button>
           </div>
           <Link to="/Carting">
-            {" "}
             <button className="bg-red-600 text-white px-6 py-2 rounded flex items-center">
               🛒 ADD TO CART
             </button>

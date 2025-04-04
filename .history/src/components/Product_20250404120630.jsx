@@ -42,7 +42,7 @@ const Product = ({
           <Link to={`/billing/${id}`}>
             <IconButton icon={<ShoppingCart className="w-5 h-5" />} />
           </Link>
-          <Link to={`/product/${id}`}>
+          <Link to={`/productName}`}>
             <IconButton icon={<Eye className="w-5 h-5" />} />
           </Link>
         </div>

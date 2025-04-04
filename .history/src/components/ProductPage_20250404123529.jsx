@@ -42,9 +42,9 @@ const ProductPage = ({
   };
 
   return (
-    <div className="w-screen mx-auto my-5  flex  justify-between">
+    <div className="w-screen mx-auto pl-16 pr-16 flex gap-16">
       {/* Left Side: Image Section */}
-      <div className="w-1/2  flex flex-col items-center">
+      <div className="w-2/5  flex flex-col items-center">
         <img
           src={currentImage}
           alt="Product"
@@ -84,8 +84,8 @@ const ProductPage = ({
       </div>
 
       {/* Right Side: Product Details */}
-      <div className="w-1/2 flex flex-col gap-6 py-10">
-        <h1 className="text-[28px] font-medium">
+      <div className="w-2/3 flex flex-col gap-6">
+        <h1 className="text-xl font-medium">
           {name ||
             "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray"}
         </h1>

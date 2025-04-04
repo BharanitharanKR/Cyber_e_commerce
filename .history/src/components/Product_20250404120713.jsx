@@ -2,7 +2,7 @@ import React from "react";
 import { Heart, ShoppingCart, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Product = ({
+const Product = ({ 
   id,
   name,
   price,
@@ -10,7 +10,7 @@ const Product = ({
   rating = 4.5,
   totalReviews = 738,
   isHot = false,
-  discount = null,
+  discount = null
 }) => {
   return (
     <div className="w-[234px] h-[300px] border rounded-lg shadow-md bg-white relative p-3 group">
@@ -20,7 +20,7 @@ const Product = ({
           HOT
         </div>
       )}
-
+      
       {/* Discount Badge */}
       {discount && (
         <div className="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-md z-[3]">

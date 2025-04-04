@@ -28,7 +28,7 @@ const ProductName = () => {
         );
 
         if (foundProduct) {
-          console.log("Product found:", foundProduct);
+          console.l
           setProduct(foundProduct);
         } else {
           console.error("Product not found");

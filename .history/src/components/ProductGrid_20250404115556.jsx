@@ -1,12 +1,11 @@
 import React from "react";
 import Product from "./Product"; // Import Product component
-import productsData from "../data/productsData.json"; // Import the JSON file
-
+import productsData from "../; // Import the JSON file
 
 const ProductGrid = () => {
   return (
     <div className="grid grid-cols-4 gap-4 p-3">
-      {productsData.products.map((product) => (
+      {productData.products.map((product) => (
         <Product
           key={product.id}
           id={product.id}

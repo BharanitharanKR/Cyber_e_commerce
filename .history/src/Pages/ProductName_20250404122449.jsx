@@ -5,7 +5,7 @@ import Tracker from "../components/Tracker";
 import ProductPage from "../components/ProductPage";
 import Description from "../components/Description";
 import ApiPage from "../components/ApiPage";
-import productData from "../data/productsData.json"; // Adjust the path as needed
+import productData from "..dt"; // Adjust the path as needed
 
 const ProductName = () => {
   const { id } = useParams(); // Get the product ID from URL
@@ -28,7 +28,6 @@ const ProductName = () => {
         );
 
         if (foundProduct) {
-          console.log("Product found:", foundProduct);
           setProduct(foundProduct);
         } else {
           console.error("Product not found");
