@@ -1,0 +1,313 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "TOZO T6 True Wireless Keyboard",
+      "price": 69.99,
+      "image": "/assets/acces27.png",
+      "rating": 4.5,
+      "totalReviews": 738,
+      "isHot": true,
+      "discount": 15,
+      "category": "Audio"
+    },
+
+    {
+      "id": 2,
+      "name": "OnePlus 12 5G Smartphone (12GB RAM, 256GB)",
+      "price": 899.99,
+      "image": "/assets/oneplus.png",
+      "rating": 4.7,
+      "totalReviews": 1242,
+      "isHot": true,
+      "discount": null,
+      "category": "Smartphones"
+    },
+    {
+      "id": 3,
+      "name": "Apple MacBook Air M3 (13-inch, 16GB RAM, 512GB SSD)",
+      "price": 1499.99,
+      "image": "/assets/Laptop10.png",
+      "rating": 4.9,
+      "totalReviews": 2156,
+      "isHot": true,
+      "discount": 5,
+      "category": "Laptops"
+    },
+    {
+      "id": 4,
+      "name": "Samsung Galaxy Tab S9 Ultra (14.6-inch, 12GB RAM)",
+      "price": 1199.99,
+      "image": "/assets/tablet1.png",
+      "rating": 4.6,
+      "totalReviews": 872,
+      "isHot": false,
+      "discount": 10,
+      "category": "Tablets"
+    },
+    {
+      "id": 5,
+      "name": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+      "price": 349.99,
+      "image": "/assets/headphone2.png",
+      "rating": 4.8,
+      "totalReviews": 1834,
+      "isHot": true,
+      "discount": null,
+      "category": "Audio"
+    },
+    {
+      "id": 6,
+      "name": "Apple Watch Series 9 (GPS + Cellular, 45mm)",
+      "price": 499.99,
+      "image": "/assets/watch20.png",
+      "rating": 4.7,
+      "totalReviews": 2431,
+      "isHot": false,
+      "discount": null,
+      "category": "Wearables"
+    },
+    {
+      "id": 7,
+      "name": "Nintendo printer OLED Model",
+      "price": 349.99,
+      "image": "/assets/printer7.png",
+      "rating": 4.8,
+      "totalReviews": 3125,
+      "isHot": false,
+      "discount": 5,
+      "category": "Gaming"
+    },
+    {
+      "id": 8,
+      "name": "Logitech MX Master 3S Connector",
+      "price": 99.99,
+      "image": "/assets/otg14.png",
+      "rating": 4.9,
+      "totalReviews": 1556,
+      "isHot": false,
+      "discount": null,
+      "category": "Computer Accessories"
+    },
+    {
+      "id": 9,
+      "name": "Dell XPS 15 (12th Gen Intel i7, 16GB RAM, 512GB SSD)",
+      "price": 1799.99,
+      "image": "/assets/Laptop17.png",
+      "rating": 4.5,
+      "totalReviews": 978,
+      "isHot": true,
+      "discount": 12,
+      "category": "Laptops"
+    },
+    {
+      "id": 10,
+      "name": "SteelSeries Arctis Nova Pro Wireless Gaming Headset",
+      "price": 349.99,
+      "image": "/assets/Headsets21.png",
+      "rating": 4.6,
+      "totalReviews": 823,
+      "isHot": false,
+      "discount": 8,
+      "category": "Gaming"
+    },
+    {
+      "id": 11,
+      "name": "Xiamoi 15 Pro Max (256GB)",
+      "price": 1199.99,
+      "image": "/assets/mobile23.png",
+      "rating": 4.8,
+      "totalReviews": 3567,
+      "isHot": true,
+      "discount": null,
+      "category": "Smartphones"
+    },
+    {
+      "id": 12,
+      "name": "Samsung 50\" Class QLED 4K Smart TV",
+      "price": 799.99,
+      "image": "/assets/Tv18.png",
+      "rating": 4.5,
+      "totalReviews": 1234,
+      "isHot": false,
+      "discount": 15,
+      "category": "TVs"
+    },
+    {
+      "id": 13,
+      "name": "Sony Epison Camera",
+      "price": 499.99,
+      "image": "/assets/camera25.png",
+      "rating": 4.6,
+      "totalReviews": 1467,
+      "isHot": true,
+      "discount": null,
+      "category": "VR/AR"
+    },
+    {
+      "id": 14,
+      "name": "DJI Mini 4 Pro Drone",
+      "price": 799.99,
+      "image": "/assets/Drone16.png",
+      "rating": 4.7,
+      "totalReviews": 856,
+      "isHot": false,
+      "discount": 5,
+      "category": "Drones"
+    },
+    {
+      "id": 15,
+      "name": "Bose QuietComfort Ultra Earbuds",
+      "price": 299.99,
+      "image": "/assets/ac7.png",
+      "rating": 4.7,
+      "totalReviews": 1245,
+      "isHot": false,
+      "discount": 10,
+      "category": "Audio"
+    },
+    {
+      "id": 16,
+      "name": "Razer Blade 16 Gaming Laptop (Intel i9, RTX 4080)",
+      "price": 2999.99,
+      "image": "/src/assets/razer-blade.png",
+      "rating": 4.5,
+      "totalReviews": 687,
+      "isHot": true,
+      "discount": null,
+      "category": "Gaming"
+    },
+    {
+      "id": 17,
+      "name": "Sony Alpha a7 IV Full-frame Mirrorless Camera",
+      "price": 2499.99,
+      "image": "/src/assets/sony-camera.png",
+      "rating": 4.8,
+      "totalReviews": 923,
+      "isHot": false,
+      "discount": 7,
+      "category": "Cameras"
+    },
+    {
+      "id": 18,
+      "name": "Samsung Galaxy Z Fold 5",
+      "price": 1799.99,
+      "image": "/src/assets/galaxy-fold.png",
+      "rating": 4.4,
+      "totalReviews": 752,
+      "isHot": true,
+      "discount": null,
+      "category": "Smartphones"
+    },
+    {
+      "id": 19,
+      "name": "LG C3 65\" OLED 4K Smart TV",
+      "price": 1699.99,
+      "image": "/src/assets/lg-tv.png",
+      "rating": 4.9,
+      "totalReviews": 1876,
+      "isHot": false,
+      "discount": 12,
+      "category": "TVs"
+    },
+    {
+      "id": 20,
+      "name": "Sonos Arc Premium Smart Soundbar",
+      "price": 899.99,
+      "image": "/src/assets/sonos-arc.png",
+      "rating": 4.7,
+      "totalReviews": 1342,
+      "isHot": false,
+      "discount": 5,
+      "category": "Audio"
+    },
+    {
+      "id": 21,
+      "name": "Garmin Forerunner 965 GPS Smartwatch",
+      "price": 599.99,
+      "image": "/src/assets/garmin-watch.png",
+      "rating": 4.6,
+      "totalReviews": 824,
+      "isHot": false,
+      "discount": null,
+      "category": "Wearables"
+    },
+    {
+      "id": 22,
+      "name": "Anker 737 PowerCore 24K Power Bank",
+      "price": 149.99,
+      "image": "/src/assets/anker-powerbank.png",
+      "rating": 4.8,
+      "totalReviews": 2143,
+      "isHot": true,
+      "discount": 15,
+      "category": "Accessories"
+    },
+    {
+      "id": 23,
+      "name": "Xbox Series X Console",
+      "price": 499.99,
+      "image": "/src/assets/xbox-series-x.png",
+      "rating": 4.8,
+      "totalReviews": 3421,
+      "isHot": false,
+      "discount": null,
+      "category": "Gaming"
+    },
+    {
+      "id": 24,
+      "name": "Google Pixel 8 Pro (256GB)",
+      "price": 999.99,
+      "image": "/src/assets/pixel-8.png",
+      "rating": 4.6,
+      "totalReviews": 1654,
+      "isHot": false,
+      "discount": 10,
+      "category": "Smartphones"
+    },
+    {
+      "id": 25,
+      "name": "ASUS ROG Strix G16 Gaming Laptop",
+      "price": 1699.99,
+      "image": "/src/assets/asus-rog.png",
+      "rating": 4.5,
+      "totalReviews": 765,
+      "isHot": true,
+      "discount": null,
+      "category": "Gaming"
+    },
+    {
+      "id": 26,
+      "name": "Keychron Q1 Pro Mechanical Keyboard",
+      "price": 199.99,
+      "image": "/src/assets/keychron.png",
+      "rating": 4.7,
+      "totalReviews": 987,
+      "isHot": false,
+      "discount": 5,
+      "category": "Computer Accessories"
+    },
+    {
+      "id": 27,
+      "name": "Dyson V15 Detect Absolute Cordless Vacuum",
+      "price": 749.99,
+      "image": "/src/assets/dyson.png",
+      "rating": 4.8,
+      "totalReviews": 1543,
+      "isHot": false,
+      "discount": 8,
+      "category": "Smart Home"
+    },
+    {
+      "id": 28,
+      "name": "Samsung Odyssey G9 49\" Curved Gaming Monitor",
+      "price": 1299.99,
+      "image": "/src/assets/samsung-monitor.png",
+      "rating": 4.9,
+      "totalReviews": 876,
+      "isHot": true,
+      "discount": 12,
+      "category": "Monitors"
+    }
+  ]
+}
