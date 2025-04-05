@@ -1,6 +1,7 @@
 import React from "react";
 import { Heart, ShoppingCart, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext"; // Import the cart context
 
 const Product = ({
   id,
@@ -12,8 +13,28 @@ const Product = ({
   isHot = false,
   discount = null,
 }) => {
+  const { addToCart } = useCart(); // Get addToCart function from context
+
+  // Create product object
+  const product = {
+    id,
+    name,
+    price,
+    image,
+    rating,
+    totalReviews,
+    isHot,
+    discount,
+  };
+
+  // Handle add to cart
+  const handleAddToCart = (e) => {
+    e.preventDefault(); // Prevent navigation
+    addToCart(product, 1);
+  };
+
   return (
-    <div className="w-[234px] h-[300px] border rounded-lg shadow-md bg-white relative p-3 group">
+    <div className="w-full sm:w-[234px] h-[300px] border rounded-lg shadow-md bg-white relative p-3 group">
       {/* HOT Badge */}
       {isHot && (
         <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md z-[3]">
@@ -29,7 +50,7 @@ const Product = ({
       )}
 
       {/* Product Image with Hover Effects */}
-      <div className="w-[202px] h-[172px] mx-auto flex justify-center items-center relative overflow-hidden">
+      <div className="w-full sm:w-[202px] h-[172px] mx-auto flex justify-center items-center relative overflow-hidden">
         <img
           src={image}
           alt={name}
@@ -42,12 +63,11 @@ const Product = ({
             icon={<Heart className="w-5 h-5" />}
             alt="Add to Wishlist"
           />
-          <Link to={`/billing/${id}`}>
-            <IconButton
-              icon={<ShoppingCart className="w-5 h-5" />}
-              alt="Add to Cart"
-            />
-          </Link>
+          <IconButton
+            icon={<ShoppingCart className="w-5 h-5" />}
+            alt="Add to Cart"
+            onClick={handleAddToCart}
+          />
           <Link to={`/product/${id}`}>
             <IconButton icon={<Eye className="w-5 h-5" />} alt="View Details" />
           </Link>
@@ -93,13 +113,14 @@ const StarRating = ({ rating }) => {
 };
 
 // 🖱️ Icon Button Component
-const IconButton = ({ icon, alt }) => {
+const IconButton = ({ icon, alt, onClick }) => {
   return (
     <div
       tabIndex={0}
       role="button"
       aria-label={alt}
       className="bg-white p-2 rounded-full shadow-md hover:text-white hover:bg-red-700 transition duration-300 cursor-pointer"
+      onClick={onClick}
     >
       {icon}
     </div>

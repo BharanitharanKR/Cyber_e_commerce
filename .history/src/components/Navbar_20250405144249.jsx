@@ -71,7 +71,7 @@ const Navbar = () => {
             <Link to="/wishlist">
               <FaHeart className="text-xl text-gray-700 cursor-pointer hover:text-red-500" />
             </Link>
-            <Link to="/Cart">
+            <Link to="/cart">
               <FaCartArrowDown className="text-xl text-gray-700 cursor-pointer hover:text-blue-500" />
             </Link>
             <FaUser className="text-xl text-gray-700 cursor-pointer hover:text-green-500" />
@@ -103,8 +103,16 @@ const Navbar = () => {
                   Products
                 </Link>
               </li>
-              <li>Contact Us</li>
-              <li>Blog</li>
+              <li>
+                <Link
+                  className="block text-black hover:text-gray-500"
+                >
+                  Contact Us
+              </li>
+              <li>
+                
+                  Blog
+              </li>
             </ul>
           </div>
         )}

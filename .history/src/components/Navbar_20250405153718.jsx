@@ -15,6 +15,7 @@ import {
   FaCamera,
   FaGamepad,
 } from "react-icons/fa";
+import { useCart } from "../context/CartContext"; // Import the cart context
 
 // Corrected import for Cyber_logo
 import Cyber_logo from "/assets/Cyber_logo.png"; // Use this for Vite
@@ -22,6 +23,7 @@ import Cyber_logo from "/assets/Cyber_logo.png"; // Use this for Vite
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { itemCount } = useCart(); // Get the item count from cart context
 
   return (
     <>
@@ -71,8 +73,14 @@ const Navbar = () => {
             <Link to="/wishlist">
               <FaHeart className="text-xl text-gray-700 cursor-pointer hover:text-red-500" />
             </Link>
-            <Link to="/Cart">
+            <Link to="/Cart" className="relative">
               <FaCartArrowDown className="text-xl text-gray-700 cursor-pointer hover:text-blue-500" />
+              {/* Cart items count badge */}
+              {itemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {itemCount}
+                </span>
+              )}
             </Link>
             <FaUser className="text-xl text-gray-700 cursor-pointer hover:text-green-500" />
           </div>
@@ -103,16 +111,30 @@ const Navbar = () => {
                   Products
                 </Link>
               </li>
-              <li>Contact Us</li>
-              <li>Blog</li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="block text-black hover:text-gray-500"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="block text-black hover:text-gray-500"
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
         )}
       </nav>
 
       {/* Category Bar */}
-      <div className="flex bg-black text-gray-400 p-2 justify-center text-sm font-medium mt-16">
-        <div className="flex space-x-28 items-center pt-2">
+      <div className="flex bg-black text-gray-400 p-2 justify-center text-sm font-medium mt-16 overflow-x-auto">
+        <div className="flex space-x-6 md:space-x-28 items-center pt-2">
           <div className="flex items-center space-x-2">
             <FaMobile />
             <Link to="/category/phones" className="hover:text-white">

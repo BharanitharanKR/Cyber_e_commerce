@@ -12,6 +12,17 @@ const Product = ({
   isHot = false,
   discount = null,
 }) => {
+  // Function to handle "Add to Cart" action
+  const addToCart = () => {
+    const product = { id, name, price, image, rating, totalReviews, discount };
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Trigger a custom event to notify the Cart component that the cart has changed
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
   return (
     <div className="w-[234px] h-[300px] border rounded-lg shadow-md bg-white relative p-3 group">
       {/* HOT Badge */}
@@ -42,12 +53,12 @@ const Product = ({
             icon={<Heart className="w-5 h-5" />}
             alt="Add to Wishlist"
           />
-          <Link to={`/billing/${id}`}>
+          <div onClick={addToCart}>
             <IconButton
               icon={<ShoppingCart className="w-5 h-5" />}
               alt="Add to Cart"
             />
-          </Link>
+          </div>
           <Link to={`/product/${id}`}>
             <IconButton icon={<Eye className="w-5 h-5" />} alt="View Details" />
           </Link>

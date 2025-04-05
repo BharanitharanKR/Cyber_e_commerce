@@ -53,7 +53,7 @@ const Cart = () => {
   );
 
   return (
-    <div className="max-w-3xl mx-auto p-8 bg-white border border-gray-200 rounded-md shadow-md mt">
+    <div className="max-w-3xl mx-auto p-8 bg-white border border-gray-200 rounded-md shadow-md mt-10">
       {/* Header */}
       <h1 className="text-lg font-semibold">Shopping Cart</h1>
       <div className="border-t border-gray-100 my-4"></div>
