@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   FaShoppingCart,
   FaUser,
@@ -18,16 +18,10 @@ import {
 
 // Corrected import for Cyber_logo
 import Cyber_logo from "/assets/Cyber_logo.png"; // Use this for Vite
+// import Cyber_logo from "../assets/Cyber_logo.png"; // Use this if the file is inside src/assets
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [search, setSearch] = useState("");
-  const navigate = useNavigate();
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    navigate("/deals");
-  };
 
   return (
     <>
@@ -65,15 +59,11 @@ const Navbar = () => {
             </ul>
 
             {/* Search Bar */}
-            <form onSubmit={handleSearchSubmit}>
-              <input
-                type="text"
-                placeholder="Search Products"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="bg-gray-50 text-gray-600 p-2 h-10 border rounded-md w-64 focus:outline-none focus:ring-1 focus:ring-gray-200"
-              />
-            </form>
+            <input
+              type="text"
+              placeholder="Search Products"
+              className="bg-gray-50 text-gray-600 p-2 h-10 border rounded-md w-64 focus:outline-none focus:ring-1 focus:ring-gray-200"
+            />
           </div>
 
           {/* Right: Icons */}
@@ -81,7 +71,7 @@ const Navbar = () => {
             <Link to="/wishlist">
               <FaHeart className="text-xl text-gray-700 cursor-pointer hover:text-red-500" />
             </Link>
-            <Link to="/carting">
+            <Link to="/productpage">
               <FaCartArrowDown className="text-xl text-gray-700 cursor-pointer hover:text-blue-500" />
             </Link>
             <FaUser className="text-xl text-gray-700 cursor-pointer hover:text-green-500" />
@@ -113,22 +103,8 @@ const Navbar = () => {
                   Products
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="block text-black hover:text-gray-500"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/blog"
-                  className="block text-black hover:text-gray-500"
-                >
-                  Blog
-                </Link>
-              </li>
+              <li>Contact Us</li>
+              <li>Blog</li>
             </ul>
           </div>
         )}

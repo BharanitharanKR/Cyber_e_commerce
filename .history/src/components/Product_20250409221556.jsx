@@ -42,7 +42,7 @@ const Product = ({
             icon={<Heart className="w-5 h-5" />}
             alt="Add to Wishlist"
           />
-          <Link to={`/Carting/${id}`}>
+          <Link to={`/Ca/${id}`}>
             <IconButton
               icon={<ShoppingCart className="w-5 h-5" />}
               alt="Add to Cart"

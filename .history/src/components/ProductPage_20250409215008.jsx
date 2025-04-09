@@ -211,4 +211,4 @@ const ProductPage = ({
   );
 };
 
-export default ProductPage;
+export default Productn;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProductPage = ({
   product,
@@ -20,7 +20,6 @@ const ProductPage = ({
   ];
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [quantity, setQuantity] = useState(1);
-  const navigate = useNavigate();
 
   // Calculate original price based on discount percentage
   const originalPrice = ((price * 100) / (100 - discount)).toFixed(0);
@@ -33,58 +32,6 @@ const ProductPage = ({
   const handleNext = () => {
     const currentIndex = images.indexOf(currentImage);
     setCurrentImage(images[(currentIndex + 1) % images.length]);
-  };
-
-  // Add to cart functionality
-  const handleAddToCart = () => {
-    // Get existing cart items or initialize empty array
-    const existingCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-    // Create new cart item with compatible structure for Cart component
-    const newItem = {
-      id: Date.now(), // Generate unique ID
-      img: currentImage,
-      name:
-        name ||
-        "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
-      price: price,
-      quantity: quantity,
-      oldPrice: originalPrice,
-    };
-
-    // Add new item to cart
-    localStorage.setItem(
-      "cartItems",
-      JSON.stringify([...existingCart, newItem])
-    );
-
-    // Navigate to cart page
-    navigate("/Carting");
-  };
-
-  // Buy now functionality
-  const handleBuyNow = () => {
-    // Same structure as add to cart but navigates to billing
-    const existingCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-    const newItem = {
-      id: Date.now(),
-      img: currentImage,
-      name:
-        name ||
-        "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
-      price: price,
-      quantity: quantity,
-      oldPrice: originalPrice,
-    };
-
-    localStorage.setItem(
-      "cartItems",
-      JSON.stringify([...existingCart, newItem])
-    );
-
-    // Navigate directly to billing
-    navigate("/Billing");
   };
 
   return (
@@ -179,19 +126,16 @@ const ProductPage = ({
             </button>
           </div>
 
-          <button
-            onClick={handleAddToCart}
-            className="bg-red-600 text-white px-6 py-2 rounded flex items-center hover:bg-red-700 transition"
-          >
-            🛒 ADD TO CART
-          </button>
-
-          <button
-            onClick={handleBuyNow}
-            className="border border-red-600 text-red-600 px-6 py-2 rounded hover:bg-red-100 transition"
-          >
-            BUY NOW
-          </button>
+          <Link to="/Carting">
+            <button className="bg-red-600 text-white px-6 py-2 rounded flex items-center hover:bg-red-700 transition">
+              🛒 ADD TO CART
+            </button>
+          </Link>
+          <Link to="/Billing">
+            <button className="border border-red-600 text-red-600 px-6 py-2 rounded hover:bg-red-100 transition">
+              BUY NOW
+            </button>
+          </Link>
         </div>
 
         {/* Additional Options */}

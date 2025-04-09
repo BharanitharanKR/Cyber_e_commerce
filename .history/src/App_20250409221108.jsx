@@ -11,6 +11,8 @@ import Compared from "./Pages/Compared";
 import Confirm from "./Pages/Confirm";
 import Carting from "./Pages/Carting";
 import WishList from "./Pages/WishList";
+import AllProducts from "./components/AllProducts"; // Import the AllProducts component
+
 function App() {
   return (
     <Router>
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/deals" element={<Deals />} />
+        <Route path="/products" element={<AllProducts />} />
+        <Route path="/category/:categoryId" element={<AllProducts />} />
         <Route path="/product/:id" element={<ProductName />} />
         <Route path="/Billing" element={<Billing />} />
         <Route path="/Chase" element={<Chase />} />
@@ -26,6 +30,7 @@ function App() {
         <Route path="/Carting" element={<Carting />} />
         <Route path="/WishList" element={<WishList />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

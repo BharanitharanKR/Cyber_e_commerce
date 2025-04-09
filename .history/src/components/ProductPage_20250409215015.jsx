@@ -39,25 +39,20 @@ const ProductPage = ({
   const handleAddToCart = () => {
     // Get existing cart items or initialize empty array
     const existingCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-
+    
     // Create new cart item with compatible structure for Cart component
     const newItem = {
       id: Date.now(), // Generate unique ID
       img: currentImage,
-      name:
-        name ||
-        "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
+      name: name || "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
       price: price,
       quantity: quantity,
-      oldPrice: originalPrice,
+      oldPrice: originalPrice
     };
-
+    
     // Add new item to cart
-    localStorage.setItem(
-      "cartItems",
-      JSON.stringify([...existingCart, newItem])
-    );
-
+    localStorage.setItem("cartItems", JSON.stringify([...existingCart, newItem]));
+    
     // Navigate to cart page
     navigate("/Carting");
   };
@@ -66,23 +61,18 @@ const ProductPage = ({
   const handleBuyNow = () => {
     // Same structure as add to cart but navigates to billing
     const existingCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-
+    
     const newItem = {
       id: Date.now(),
       img: currentImage,
-      name:
-        name ||
-        "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
+      name: name || "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
       price: price,
       quantity: quantity,
-      oldPrice: originalPrice,
+      oldPrice: originalPrice
     };
-
-    localStorage.setItem(
-      "cartItems",
-      JSON.stringify([...existingCart, newItem])
-    );
-
+    
+    localStorage.setItem("cartItems", JSON.stringify([...existingCart, newItem]));
+    
     // Navigate directly to billing
     navigate("/Billing");
   };
@@ -179,14 +169,14 @@ const ProductPage = ({
             </button>
           </div>
 
-          <button
+          <button 
             onClick={handleAddToCart}
             className="bg-red-600 text-white px-6 py-2 rounded flex items-center hover:bg-red-700 transition"
           >
             🛒 ADD TO CART
           </button>
-
-          <button
+          
+          <button 
             onClick={handleBuyNow}
             className="border border-red-600 text-red-600 px-6 py-2 rounded hover:bg-red-100 transition"
           >
