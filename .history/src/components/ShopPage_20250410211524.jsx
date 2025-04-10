@@ -15,7 +15,7 @@ const ShopPage = () => {
             mt: 4, // Extra margin on top
           }}
         >
-          <Slidebar />
+          <Sidebar />
         </Box>
 
         {/* Product Grid (Takes Remaining Space) */}
