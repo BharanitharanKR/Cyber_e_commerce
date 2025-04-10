@@ -114,9 +114,21 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                className="block text-black hover:text-gray-500" Contact Us
+                <Link
+                  to="/contact"
+                  className="block text-black hover:text-gray-500"
+                >
+                  Contact Us
+                </Link>
               </li>
-              <li>className="block text-black hover:text-gray-500" Blog</li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="block text-black hover:text-gray-500"
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
         )}
@@ -151,13 +163,13 @@ const Navbar = () => {
           </div>
           <div className="flex items-center space-x-2">
             <FaCamera />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="//cameras" className="hover:text-white">
               Cameras
             </Link>
           </div>
           <div className="flex items-center space-x-2">
             <FaGamepad />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="/category/gaming" className="hover:text-white">
               Gaming
             </Link>
           </div>

@@ -28,12 +28,12 @@ const Advert = () => {
       </div>
       <div className="absolute bottom-0 right-0">
         <img
-          className="w-[100px] h-[200px]"
+          className="w-[200px] h-[200px]"
           src="/assets/iphone.png"
           alt="iphone"
         />
       </div>
-      <div className="absolute top-36 left-0">
+      <div className="absolute bottom-3 left-0">
         <img
           className="w-[300px] h-[300px]"
           src="/assets/phone3.png"

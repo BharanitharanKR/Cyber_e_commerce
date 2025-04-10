@@ -4,12 +4,12 @@ const Adver = () => {
   return (
     <div className="flex items-center justify-center space-x-4 mt-12">
       <img
-        src="/assets/Banner.png"
+        src="/assets/banner.png"
         alt="Advertisement Banner"
         className="w-[646px] h-[304px]"
       />
       <img
-        src="/assets/bb6.png"
+        src="/assets/banner2.png"
         alt="Advertisement Banner"
         className="w-[646px] h-[304px]"
       />

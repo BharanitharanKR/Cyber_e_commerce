@@ -28,7 +28,7 @@ const Advert = () => {
       </div>
       <div className="absolute bottom-0 right-0">
         <img
-          className="w-[100px] h-[200px]"
+          className="w-[200px] h-[200px]"
           src="/assets/iphone.png"
           alt="iphone"
         />

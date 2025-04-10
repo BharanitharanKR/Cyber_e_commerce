@@ -9,9 +9,9 @@ const Adver = () => {
         className="w-[646px] h-[304px]"
       />
       <img
-        src="/assets/bb6.png"
+        src="/assets/Banner2.png"
         alt="Advertisement Banner"
-        className="w-[646px] h-[304px]"
+        className="w-[646px] h-[404px]"
       />
     </div>
   );

@@ -114,9 +114,19 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                className="block text-black hover:text-gray-500" Contact Us
+                
+                  className="block text-black hover:text-gray-500"
+                
+                  Contact Us
+                
               </li>
-              <li>className="block text-black hover:text-gray-500" Blog</li>
+              <li>
+                
+                  className="block text-black hover:text-gray-500"
+                
+                  Blog
+                
+              </li>
             </ul>
           </div>
         )}

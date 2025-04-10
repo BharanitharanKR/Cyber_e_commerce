@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           {/* Left: Logo */}
           <div className="flex items-center">
-            <img src={Cyber_logo} alt="Logo" className="h-6 w-auto" />
+            <img src={Cyber_logo} alt="Logo" className="h-8 w-auto" />
           </div>
 
           {/* Center: Navigation Links & Search */}
@@ -114,9 +114,21 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                className="block text-black hover:text-gray-500" Contact Us
+                <Link
+                  to="/contact"
+                  className="block text-black hover:text-gray-500"
+                >
+                  Contact Us
+                </Link>
               </li>
-              <li>className="block text-black hover:text-gray-500" Blog</li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="block text-black hover:text-gray-500"
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
         )}
@@ -127,41 +139,42 @@ const Navbar = () => {
         <div className="flex space-x-28 items-center pt-2">
           <div className="flex items-center space-x-2">
             <FaMobile />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="/category/phones" className="hover:text-white">
               Phones
             </Link>
           </div>
           <div className="flex items-center space-x-2">
             <FaLaptop />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="/category/computers" className="hover:text-white">
               Computers
             </Link>
           </div>
           <div className="flex items-center space-x-2">
             <FaClock />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="/category/watches" className="hover:text-white">
               Smart Watches
             </Link>
           </div>
           <div className="flex items-center space-x-2">
             <FaHeadphones />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="/category/headphones" className="hover:text-white">
               Headphones
             </Link>
           </div>
           <div className="flex items-center space-x-2">
             <FaCamera />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="/category/cameras" className="hover:text-white">
               Cameras
             </Link>
           </div>
           <div className="flex items-center space-x-2">
             <FaGamepad />
-            <Link to="/deals" className="hover:text-white">
+            <Link to="/category/gaming" className="hover:text-white">
               Gaming
             </Link>
           </div>
         </div>
+
       </div>
     </>
   );
