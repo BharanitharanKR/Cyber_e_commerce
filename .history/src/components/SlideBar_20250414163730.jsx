@@ -21,7 +21,7 @@ import {
   CheckCircle,
 } from "@mui/icons-material";
 
-const Slidebar = () => {
+const Slide = () => {
   const [expanded, setExpanded] = useState(null);
   const [range, setRange] = useState([10, 90]);
   const [priceRange, setPriceRange] = useState([100, 1000]);
@@ -139,7 +139,6 @@ const Slidebar = () => {
         </Collapse>
         <Divider sx={{ my: 2 }} />
 
-        
         {/* Other Filters */}
         {filters.map((item) => (
           <Box key={item.name}>
@@ -164,4 +163,3 @@ const Slidebar = () => {
 };
 
 export default Slidebar;
-

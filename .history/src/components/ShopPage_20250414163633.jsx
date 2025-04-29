@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container } from "@mui/material";
-import Slidebar from "./Slidebar"; // Fixed import path
-import ProductGrid from "./ProductGrid"; // Fixed import path
+import Slidebar from "../components/Slidebar"; // Ensure correct import
+import ProductGrid from "../components/ProductGrid"; // Ensure correct import
 
 const ShopPage = () => {
   return (
@@ -15,7 +15,7 @@ const ShopPage = () => {
             mt: 4, // Extra margin on top
           }}
         >
-          <Slidebar />
+          <Slide/>
         </Box>
 
         {/* Product Grid (Takes Remaining Space) */}

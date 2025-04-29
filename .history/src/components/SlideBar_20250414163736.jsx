@@ -139,7 +139,6 @@ const Slidebar = () => {
         </Collapse>
         <Divider sx={{ my: 2 }} />
 
-        
         {/* Other Filters */}
         {filters.map((item) => (
           <Box key={item.name}>
@@ -164,4 +163,3 @@ const Slidebar = () => {
 };
 
 export default Slidebar;
-
