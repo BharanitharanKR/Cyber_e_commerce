@@ -17,6 +17,8 @@
     "@mui/material": "^6.4.8",
     "@mui/styled-engine-sc": "^6.4.6",
     "@shadcn/ui": "^0.0.4",
+    "firebase": "^11.6.1",
+    "firebase-tools": "^14.2.1",
     "lucide-react": "^0.483.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
