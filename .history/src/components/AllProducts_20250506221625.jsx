@@ -52,7 +52,7 @@ const NavbarTop = () => {
   return (
     <div className="bg-white-100 shadow">
       {/* Desktop View */}
-      <div className="hidden md:flex items-center justify-between px-4 lg:px-10 py-3">
+<div className="hidden md:flex items-center justify-between px-4 lg:px-10 py-1">
         <div className="relative z-10" ref={dropdownRef}>
           <button
             onClick={() => setIsOpen(!isOpen)}

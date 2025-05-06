@@ -10,11 +10,6 @@ import {
   ListItemButton,
   ListItemText,
   Divider,
-  IconButton,
-  Drawer,
-  useMediaQuery,
-  useTheme,
-  Button,
 } from "@mui/material";
 import {
   ExpandLess,
@@ -24,11 +19,9 @@ import {
   Category,
   Star,
   CheckCircle,
-  Close,
-  FilterList,
 } from "@mui/icons-material";
 
-const Slidebar = ({ isMobileOpen, setIsMobileOpen }) => {
+const Slidebar = () => {
   const [expanded, setExpanded] = useState(null);
   const [range, setRange] = useState([10, 90]);
   const [priceRange, setPriceRange] = useState([100, 1000]);
@@ -41,38 +34,22 @@ const Slidebar = ({ isMobileOpen, setIsMobileOpen }) => {
     Dell: false,
   });
 
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
   const filters = [
     { name: "Category", icon: <Category sx={{ mr: 1 }} /> },
     { name: "Ratings", icon: <Star sx={{ mr: 1 }} /> },
     { name: "Availability", icon: <CheckCircle sx={{ mr: 1 }} /> },
   ];
 
-  const toggleDrawer = () => {
-    setIsMobileOpen(!isMobileOpen);
-  };
-
-  const filterContent = (
-    <Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          mb: 2,
-          display: { xs: "flex", md: "none" },
-        }}
-      >
-        <Typography variant="h6" fontWeight="bold">
-          Filters
-        </Typography>
-        <IconButton onClick={toggleDrawer}>
-          <Close />
-        </IconButton>
-      </Box>
-
+  return (
+    <Box
+      sx={{
+        minWidth: "250px", // Prevents shrinking
+        maxWidth: "20%",
+        minHeight: "100vh",
+        p: 3,
+        bgcolor: "#f9f9f9",
+      }}
+    >
       <List>
         {/* Range Filter */}
         <ListItemButton
@@ -120,12 +97,6 @@ const Slidebar = ({ isMobileOpen, setIsMobileOpen }) => {
               min={0}
               max={5000}
             />
-            <Box
-              sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}
-            >
-              <Typography variant="body2">${priceRange[0]}</Typography>
-              <Typography variant="body2">${priceRange[1]}</Typography>
-            </Box>
           </Box>
         </Collapse>
         <Divider sx={{ my: 2 }} />
@@ -168,6 +139,7 @@ const Slidebar = ({ isMobileOpen, setIsMobileOpen }) => {
         </Collapse>
         <Divider sx={{ my: 2 }} />
 
+        
         {filters.map((item) => (
           <Box key={item.name}>
             <ListItemButton
@@ -186,66 +158,9 @@ const Slidebar = ({ isMobileOpen, setIsMobileOpen }) => {
           </Box>
         ))}
       </List>
-
-      {isSmallScreen && (
-        <Box sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
-          <Button variant="outlined" sx={{ width: "48%" }}>
-            Reset
-          </Button>
-          <Button variant="contained" sx={{ width: "48%" }}>
-            Apply Filters
-          </Button>
-        </Box>
-      )}
     </Box>
-  );
-
-  // For desktop screens
-  if (!isSmallScreen) {
-    return (
-      <Box
-        sx={{
-          width: "100%",
-          p: 3,
-          bgcolor: "#f9f9f9",
-          borderRadius: 2,
-          boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-        }}
-      >
-        {filterContent}
-      </Box>
-    );
-  }
-
-  // For mobile screens
-  return (
-    <>
-      <Button
-        variant="contained"
-        startIcon={<FilterList />}
-        fullWidth
-        onClick={toggleDrawer}
-        sx={{ mb: 2 }}
-      >
-        Filters
-      </Button>
-      <Drawer
-        anchor="left"
-        open={isMobileOpen}
-        onClose={toggleDrawer}
-        sx={{
-          "& .MuiDrawer-paper": {
-            width: { xs: "85%", sm: "350px" },
-            p: 2,
-            boxSizing: "border-box",
-            overflow: "auto",
-          },
-        }}
-      >
-        {filterContent}
-      </Drawer>
-    </>
   );
 };
 
 export default Slidebar;
+

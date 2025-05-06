@@ -88,39 +88,43 @@ const ProductPage = ({
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto my-5 px-4 md:px-6 flex flex-col lg:flex-row lg:justify-between">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 mx-auto my-5 flex flex-col md:flex-row md:justify-between">
       {/* Left: Image Section */}
-      <div className="w-full lg:w-1/2 flex flex-col items-center mb-6 lg:mb-0">
-        <img
-          src={currentImage}
-          alt="Product Preview"
-          className="w-full max-w-md h-auto object-contain"
-        />
+      <div className="w-full md:w-1/2 flex flex-col items-center mb-8 md:mb-0">
+        <div className="w-full flex justify-center">
+          <img
+            src={currentImage}
+            alt="Product Preview"
+            className="w-full max-w-md h-auto sm:h-64 md:h-80 lg:h-96 object-contain"
+          />
+        </div>
 
         {/* Thumbnail Carousel */}
-        <div className="flex items-center gap-2 mt-4 max-w-full overflow-x-auto">
+        <div className="flex items-center gap-2 mt-4 w-full justify-center">
           <button
             onClick={handlePrev}
-            className="p-2 bg-red-500 text-white rounded-full hover:bg-red-700 transition flex-shrink-0"
+            className="p-2 bg-red-500 text-white rounded-full hover:bg-red-700 transition"
+            aria-label="Previous image"
           >
             ←
           </button>
-          <div className="flex gap-2 overflow-x-auto">
+          <div className="flex gap-2 overflow-x-auto max-w-xs sm:max-w-md scrollbar-hide">
             {images.map((img, index) => (
               <img
                 key={index}
                 src={img}
                 alt={`Thumbnail ${index + 1}`}
-                className={`w-12 h-12 sm:w-16 sm:h-16 border-2 rounded-md cursor-pointer transition flex-shrink-0 ${
+                className={`w-12 h-12 sm:w-16 sm:h-16 border-2 rounded-md cursor-pointer transition ${
                   currentImage === img ? "border-red-500" : "border-transparent"
-                }`}
+                } flex-shrink-0`}
                 onClick={() => setCurrentImage(img)}
               />
             ))}
           </div>
           <button
             onClick={handleNext}
-            className="p-2 bg-red-500 text-white rounded-full hover:bg-red-700 transition flex-shrink-0"
+            className="p-2 bg-red-500 text-white rounded-full hover:bg-red-700 transition"
+            aria-label="Next image"
           >
             →
           </button>
@@ -128,21 +132,23 @@ const ProductPage = ({
       </div>
 
       {/* Right: Product Details */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-4 md:gap-6 py-4 md:py-10">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-medium">
+      <div className="w-full md:w-1/2 flex flex-col gap-4 md:gap-6 py-4 md:py-10">
+        <h1 className="text-xl sm:text-2xl md:text-[28px] font-medium">
           {name ||
             "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray"}
         </h1>
 
         {/* Product Meta Details */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full sm:w-2/3 gap-2">
-          <p className="text-gray-500">Brand: {product?.brand || "Apple"}</p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full md:w-5/6">
+          <p className="text-gray-500 mb-2 sm:mb-0">
+            Brand: {product?.brand || "Apple"}
+          </p>
           <p className="text-green-600">
             Availability: {product?.availability || "In Stock"}
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full sm:w-2/3 gap-2">
-          <p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full md:w-5/6">
+          <p className="mb-2 sm:mb-0">
             Category:{" "}
             <span className="text-black font-bold">
               {product?.category || "Electronics Devices"}
@@ -161,12 +167,13 @@ const ProductPage = ({
         </div>
 
         {/* Quantity Selector & Buttons */}
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4 mt-2">
           <div className="flex items-center border p-2 rounded">
             <button
               className="px-3 disabled:opacity-50"
               disabled={quantity === 1}
               onClick={() => setQuantity((prev) => Math.max(prev - 1, 1))}
+              aria-label="Decrease quantity"
             >
               -
             </button>
@@ -174,15 +181,16 @@ const ProductPage = ({
             <button
               className="px-3"
               onClick={() => setQuantity((prev) => prev + 1)}
+              aria-label="Increase quantity"
             >
               +
             </button>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex gap-2 flex-wrap">
             <button
               onClick={handleAddToCart}
-              className="bg-red-600 text-white px-4 sm:px-6 py-2 rounded flex items-center hover:bg-red-700 transition"
+              className="bg-red-600 text-white px-4 sm:px-6 py-2 rounded flex items-center hover:bg-red-700 transition whitespace-nowrap"
             >
               🛒 ADD TO CART
             </button>
@@ -197,7 +205,7 @@ const ProductPage = ({
         </div>
 
         {/* Additional Options */}
-        <div className="flex flex-wrap items-center gap-4 text-gray-600 mt-4">
+        <div className="flex flex-wrap items-center gap-4 text-sm sm:text-base text-gray-600 mt-4">
           <button className="hover:text-red-600 transition">
             ❤️ Add to Wishlist
           </button>

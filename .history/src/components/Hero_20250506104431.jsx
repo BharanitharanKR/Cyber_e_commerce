@@ -16,11 +16,11 @@ const FeatureCard = ({ icon, title, desc }) => (
 const Hero = () => {
   return (
     <div>
-      {/* Hero Section - Enhanced Responsive Design */}
-      <section className="relative h-[500px] sm:h-[450px] md:h-[514px] bg-hero-gradient overflow-hidden">
-        <div className="container mx-auto flex flex-col md:flex-row items-center h-full px-4 md:px-6 relative">
+      {/* Hero Section - Responsive */}
+      <section className="relative h-[400px] sm:h-[450px] md:h-[514px] bg-hero-gradient">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-6 h-full">
           {/* Left: Text Content */}
-          <div className="mt-8 md:mt-0 text-white text-center md:text-left space-y-2 md:space-y-4 md:w-1/2 z-10">
+          <div className="mt-16 md:mt-48 text-white text-center md:text-left space-y-2 md:space-y-4 md:w-1/2 z-10">
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold uppercase">
               Biggest Season Sale
             </h1>
@@ -35,20 +35,20 @@ const Hero = () => {
             </Link>
           </div>
 
-          {/* Right: Image - Improved for mobile */}
-          <div className="absolute bottom-0 right-0 left-0 md:relative md:bottom-auto md:right-auto md:left-auto md:h-full md:w-1/2 flex justify-center md:justify-end items-end">
+          {/* Right: Image */}
+          <div className="h-full md:h-[528px] md:w-1/2 flex items-end justify-center md:justify-end">
             <img
               src="/assets/Phone.png"
               alt="Sale Banner"
               loading="lazy"
-              className="w-56 sm:w-64 md:w-[450px] lg:w-[550px] h-auto object-contain drop-shadow-lg transform-none md:transform md:translate-y-0"
+              className="w-64 sm:w-72 md:w-[500px] lg:w-[600px] h-auto object-contain drop-shadow-lg"
             />
           </div>
         </div>
       </section>
 
-      {/* Features Section - Improved Grid */}
-      <div className="max-w-[1320px] p-4 md:p-8 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 border border-gray-100 rounded-lg shadow-lg bg-white">
+      {/* Features Section */}
+      <div className="max-w-[1320px] p-4 md:p-8 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 border border-gray-100 rounded-lg shadow-lg">
         {[
           {
             icon: (
@@ -81,21 +81,19 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Design Blocks Section - More responsive adjustments */}
+      {/* Design Blocks Section */}
       <div className="w-full bg-gray-200 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 p-4 md:p-6 mt-4">
         {/* Left Side */}
         <div className="flex flex-col gap-4 md:gap-6">
-          {/* PlayStation Block - Better mobile layout */}
+          {/* PlayStation Block */}
           <div className="relative bg-white flex flex-col sm:flex-row items-center p-4 md:p-6 rounded-lg shadow-md overflow-hidden">
-            <div className="flex justify-center w-full sm:w-auto sm:justify-start">
-              <img
-                src="/assets/ps5.png"
-                alt="PS5"
-                loading="lazy"
-                className="w-32 sm:w-40 md:w-[200px] lg:w-[250px] xl:w-[315px] h-auto object-contain sm:-ml-10 md:-ml-20"
-              />
-            </div>
-            <div className="flex flex-col gap-2 mt-4 sm:mt-0 sm:ml-6 text-center sm:text-left w-full sm:w-auto">
+            <img
+              src="/assets/ps5.png"
+              alt="PS5"
+              loading="lazy"
+              className="w-32 sm:w-40 md:w-[200px] lg:w-[250px] xl:w-[315px] h-auto object-contain sm:-ml-10 md:-ml-20"
+            />
+            <div className="flex flex-col gap-2 mt-4 sm:mt-0 sm:ml-6 text-center sm:text-left">
               <p className="text-black font-semibold text-xl sm:text-2xl md:text-[30px]">
                 PlayStation 5
               </p>
@@ -109,7 +107,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* AirPods & Vision Pro - Better spacing */}
+          {/* AirPods & Vision Pro */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* AirPods Box */}
             <div className="bg-white flex items-center justify-center p-4 md:p-6 rounded-lg shadow-md">
@@ -117,7 +115,7 @@ const Hero = () => {
                 src="/assets/airpods.png"
                 alt="AirPods"
                 loading="lazy"
-                className="w-24 sm:w-28 md:w-[150px] lg:w-[180px] h-auto object-contain"
+                className="w-24 sm:w-28 md:w-[150px] lg:w-[243px] h-auto object-contain"
               />
             </div>
 
@@ -127,13 +125,13 @@ const Hero = () => {
                 src="/assets/vision.png"
                 alt="Vision Pro"
                 loading="lazy"
-                className="w-24 sm:w-28 md:w-[150px] lg:w-[180px] h-auto object-contain"
+                className="w-24 sm:w-28 md:w-[150px] lg:w-[243px] h-auto object-contain"
               />
             </div>
           </div>
         </div>
 
-        {/* Right Side - MacBook Section */}
+        {/* Right Side */}
         <div className="bg-white flex flex-col md:flex-row items-center justify-between p-4 md:p-6 rounded-lg shadow-md relative overflow-hidden">
           <div className="flex flex-col gap-3 md:gap-6 items-center md:items-start text-center md:text-left md:w-1/2 z-10">
             <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900">
@@ -146,12 +144,12 @@ const Hero = () => {
               Shop Now
             </button>
           </div>
-          <div className="mt-6 md:mt-0 md:w-1/2 flex justify-center items-center">
+          <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
             <img
               src="/assets/lap.png"
               alt="MacBook Pro"
               loading="lazy"
-              className="w-full max-w-[180px] sm:max-w-[220px] md:max-w-[280px] lg:max-w-[353px] h-auto object-contain transform hover:scale-105 transition-transform"
+              className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[353px] h-auto object-contain transform hover:scale-105 transition-transform"
             />
           </div>
         </div>
